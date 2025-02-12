@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ExamenService } from '../examen.service';
 
 @Component({
   selector: 'app-home',
@@ -8,6 +9,15 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(private servicio: ExamenService) {}
+
+  quote: any;
+
+  ngOnInit(){
+    this.servicio.try().subscribe((data)=>{this.quote=data});
+
+  }
 
 }
+
+
