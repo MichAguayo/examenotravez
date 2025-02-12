@@ -1,0 +1,7 @@
+{
+  "name": "reexamen",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

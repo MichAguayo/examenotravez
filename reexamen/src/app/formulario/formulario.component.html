@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar class="toolbar">
+    <ion-title class="tituloo">Examen parcial 1</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="estilo" padding>
+  <h2>Registrar películas </h2>
+
+
+  <input #NameInput type="text" placeholder="Nombre de la película" />
+  <input #YearInput type="number" placeholder="Año de lanzamiento" />
+  <input #ProductorInput type="text" placeholder="Nombre de productor" />
+  <input #CasaInput type="text" placeholder="Casa productora" />
+  <input #ProtaInput type="text" placeholder="Protagonista" />
+  
+
+  <button
+    (click)="addEvent(
+      NameInput.value,
+      YearInput.value,
+      ProductorInput.value,
+      CasaInput.value,
+      ProtaInput.value
+    );
+    NameInput.value = '';
+    YearInput.value = '';
+    ProductorInput.value = '';
+    CasaInput.value = '';
+    ProtaInput.value = ''"
+  >
+    Registrar película
+  </button>
+
+
+  <table class="tablita" border="1" style="margin-top: 20px; width: 100%; text-align: left">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre de película</th>
+        <th>Año de lanzamiento</th>
+        <th>Nombre de productora</th>
+        <th>Casa productora</th>
+        <th>Protagonista</th>
+    
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let event of events">
+        <td>{{ event.id }}</td>
+        <td>{{ event.Name }}</td>
+        <td>{{ event.Year }}</td>
+        <td>{{ event.Productor }}</td>
+        <td>{{ event.Casa }}</td>
+        <td>{{ event.Prota }}</td>
+        
+        
+      </tr>
+    </tbody>
+  </table>
+</ion-content>
